@@ -31,13 +31,11 @@ module.exports = {
         loader: 'raw-loader',
       },
       {
-        test: /\.(pdf|gif|png|jpe?g|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {},
-          },
-        ],
+        test: /\.hbs$/,
+        use: [{
+          loader: "handlebars-loader",
+          options: {helperDirs: path.resolve(__dirname, "./js/helpers")}
+        }]
       },
     ],
   },
